@@ -14,9 +14,10 @@ import java.util.List;
 public class MemberController {
     private final MemberService memberService;
 
-    @Autowired
+    @Autowired  //필요한 의존 객체의 “타입"에 해당하는 빈을 찾아 주입
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService = " + memberService.getClass());
     }
 
     @GetMapping("/members/new")
